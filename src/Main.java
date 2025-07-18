@@ -5,10 +5,15 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-        LocalDate dataPedroBirth = LocalDate.of(2002, 7, 16);
 
-        Bank contaDoPedro = new Bank("829", "123", "Pedro", dataPedroBirth, 500);
+        Bank contaDoPedro = new Bank("829", "123", "Pedro", LocalDate.of(2002, 7, 16), 500);
+        Bank contaDoJoao = new Bank("759", "123", "Joao", LocalDate.of(1993, 4, 23), 300);
 
-        contaDoPedro.Deposit(300);
+        contaDoJoao.Withdraw(100);
+        contaDoPedro.Deposit(200);
+        contaDoJoao.TransferMoney(150, contaDoJoao);
+
+        contaDoPedro.impressExtract();
+        contaDoJoao.impressExtract();
     }
 }
